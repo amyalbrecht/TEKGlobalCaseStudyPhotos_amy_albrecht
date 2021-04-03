@@ -7,7 +7,7 @@ import com.photos.amy.albrecht.entities.Tag;
 
 @Repository
 public interface TagRepository extends JpaRepository<Tag, Integer> {
-	Tag getTagByTagId(int id);
+	Tag getTagByTagId(Integer tagId);
 
 	Tag findTagByTagName(String tagName);
 

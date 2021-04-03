@@ -14,8 +14,8 @@ public class UserPhotoRelationships extends MariaDBConnector {
 
 	public static void main(String[] args) {
 
-			testCreateUser();
-			testCreatePhoto();
+			//testCreateUser();
+			//testCreatePhoto();
 			//testCreateAlbum();
 			//testCreateComment();
 			//testCreateTag();

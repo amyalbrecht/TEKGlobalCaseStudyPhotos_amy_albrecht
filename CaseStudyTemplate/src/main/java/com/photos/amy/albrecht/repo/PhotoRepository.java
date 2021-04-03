@@ -7,7 +7,7 @@ import com.photos.amy.albrecht.entities.Photo;
 
 @Repository
 public interface PhotoRepository extends JpaRepository<Photo, Integer> {
-	Photo getPhotoByPhotoId(int id);
+	Photo getPhotoByPhotoId(Integer photoId);
 
 	Photo findPhotoByPhotoFileName(String photoFileName);
 	
