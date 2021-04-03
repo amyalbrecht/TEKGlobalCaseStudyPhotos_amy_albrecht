@@ -31,7 +31,6 @@ public class Album {
 	
 	public Album() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Album(int albumId, String albumName) {
