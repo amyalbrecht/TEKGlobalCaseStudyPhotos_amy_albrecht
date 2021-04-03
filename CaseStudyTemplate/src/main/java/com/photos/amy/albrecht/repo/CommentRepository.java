@@ -5,7 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.photos.amy.albrecht.entities.Comment;
 
+
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Integer> {
-	Comment getCommentByCommentId(int id);
+	Comment getCommentByCommentId(Integer commentId);
+
+	Comment findCommentByCommentText(String commentText);
+
+	Comment countByCommentId(Integer commentId);
 }

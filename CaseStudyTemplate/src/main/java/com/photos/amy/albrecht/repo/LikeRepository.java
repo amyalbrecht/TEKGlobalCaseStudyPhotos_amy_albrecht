@@ -7,6 +7,6 @@ import com.photos.amy.albrecht.entities.Like;
 
 @Repository
 public interface LikeRepository extends JpaRepository<Like, Integer> {
-	Like countByLikeId(int id);
+	Like countByLikeId(Integer id);
 
 }
