@@ -26,9 +26,33 @@ private UserRepository userRepository;
 		userRepository.save(user);
 	}
 	
-	public User findUserByEmail(String email) {
-		return userRepository.findUserByEmail(email);
+	public User getUser(String email) {
+		if(email == null) return null;
+		return userRepository.getUserByEmail(email);
 	}
+	
+	public boolean editUser(String email, String password, String firstName, String lastName) {
+		return false;
+		
+	}
+	
+	public boolean addUser(User user) {
+		if(user == null) return false;
+		userRepository.save(user);
+		return true;
+	}
+	
+	public boolean deleteUser(String email) {
+		if(email == null) return false;
+		User user = userRepository.getUserByEmail(email);
+		if (user != null) {
+			userRepository.delete(user);
+			return true;
+		}
+		return false;
+	}
+	
+	
 	
 
 	/* 

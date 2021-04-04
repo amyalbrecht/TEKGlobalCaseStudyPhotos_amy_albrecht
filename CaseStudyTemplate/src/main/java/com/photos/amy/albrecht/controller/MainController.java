@@ -11,4 +11,9 @@ public class MainController {
 		return "index"; // view file name index.jsp
 	}
 	
+	@RequestMapping("about") 
+	public String aboutHandler() {
+		return "about"; // view file name about.jsp
+	}
+	
 }

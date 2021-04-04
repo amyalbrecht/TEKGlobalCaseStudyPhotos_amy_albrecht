@@ -7,8 +7,9 @@ import com.photos.amy.albrecht.entities.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-	User getUserByUserId(Integer userId);
-
-	User findUserByEmail(String email);
+	public User getUserByUserId(Integer userId);
+	public User getUserByEmail(String email);
+	public boolean existsByEmail(String email);
+	public boolean existsByEmailAndPassword(String email, String password);
 
 }
