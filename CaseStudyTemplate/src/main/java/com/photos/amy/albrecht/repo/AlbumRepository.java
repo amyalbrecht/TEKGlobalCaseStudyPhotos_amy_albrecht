@@ -9,6 +9,12 @@ import com.photos.amy.albrecht.entities.Album;
 public interface AlbumRepository extends JpaRepository<Album, Integer> {
 	Album getAlbumByAlbumId(Integer albumId);
 	
-	Album findAlbumByAlbumName(String albumName);
+	Album getAlbumByAlbumName(String albumName);
+	
+	void addAlbumByAlbumName(String albumName);
+
+	void deleteByAlbumName(String albumName);
+
+	void save(String albumName);
 
 }

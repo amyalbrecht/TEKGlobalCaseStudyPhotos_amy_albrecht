@@ -1,5 +1,6 @@
 package com.photos.amy.albrecht.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,8 +15,9 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name = "album")
-public class Album {
-	
+public class Album implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "albumId", nullable = false, length = 11)
@@ -57,12 +59,21 @@ public class Album {
 		this.albumName = albumName;
 	}
 
+	public List<Photo> getaPhotos() {
+		return aPhotos;
+	}
+
+	public void setaPhotos(List<Photo> aPhotos) {
+		this.aPhotos = aPhotos;
+	}
+
 	//hashCode()
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((aPhotos == null) ? 0 : aPhotos.hashCode());
 		result = prime * result + albumId;
 		result = prime * result + ((albumName == null) ? 0 : albumName.hashCode());
 		return result;
@@ -79,6 +90,11 @@ public class Album {
 		if (getClass() != obj.getClass())
 			return false;
 		Album other = (Album) obj;
+		if (aPhotos == null) {
+			if (other.aPhotos != null)
+				return false;
+		} else if (!aPhotos.equals(other.aPhotos))
+			return false;
 		if (albumId != other.albumId)
 			return false;
 		if (albumName == null) {
@@ -93,8 +109,18 @@ public class Album {
 	
 	@Override
 	public String toString() {
-		return "album [albumId=" + albumId + ", albumName=" + albumName + "]";
+		return "Album [albumId=" + albumId + ", albumName=" + albumName + ", aPhotos=" + aPhotos + "]";
 	}
+	
+	
+
+	
+
+	
+	
+	
+	
+	
 	
 	
 }
